@@ -1,0 +1,160 @@
+
+# 🎨 1. Inline CSS
+
+### ✅ Definition
+
+Inline CSS is applied **directly inside an HTML tag** using the `style` attribute.
+
+### ✅ Syntax
+
+```html
+<tag style="property: value;">
+```
+
+### ✅ Example
+
+```html
+<p style="color: red; font-size: 20px;">
+  Hello World
+</p>
+```
+
+### ✅ Use Cases
+
+* Quick testing
+* Small changes
+* Overriding other styles
+
+### ❌ Disadvantages
+
+* Not reusable
+* Makes HTML messy
+* Hard to maintain
+
+---
+
+# 🎨 2. Internal CSS
+
+### ✅ Definition
+
+Internal CSS is written **inside the `<style>` tag** within the `<head>` section of HTML.
+
+### ✅ Syntax
+
+```html
+<head>
+  <style>
+    selector {
+      property: value;
+    }
+  </style>
+</head>
+```
+
+### ✅ Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    p {
+      color: blue;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <p>Hello World</p>
+</body>
+</html>
+```
+
+### ✅ Use Cases
+
+* Styling a **single page**
+* When you don’t want separate files
+
+### ❌ Disadvantages
+
+* Not reusable across multiple pages
+* Increases page size
+
+---
+
+# 🎨 3. External CSS
+
+### ✅ Definition
+
+External CSS is written in a **separate `.css` file** and linked to HTML.
+
+### ✅ Syntax
+
+**Step 1: Create CSS file (`styles.css`)**
+
+```css
+p {
+  color: green;
+  font-size: 22px;
+}
+```
+
+**Step 2: Link in HTML**
+
+```html
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+```
+
+### ✅ Example
+
+```html
+<p>Hello World</p>
+```
+
+### ✅ Use Cases
+
+* Large projects
+* Multiple pages
+* Production apps (React, real-world apps)
+
+### ❌ Disadvantages
+
+* Requires additional HTTP request
+* Slightly more setup
+
+---
+
+# ⚖️ Priority (Very Important for Interviews)
+
+👉 CSS Priority Order (Highest → Lowest)
+
+```
+Inline CSS > Internal CSS > External CSS
+```
+
+---
+
+# 🧠 Quick Comparison Table
+
+| Feature     | Inline CSS | Internal CSS  | External CSS  |
+| ----------- | ---------- | ------------- | ------------- |
+| Location    | Inside tag | `<style>` tag | Separate file |
+| Reusability | ❌ No       | ❌ Limited     | ✅ Yes         |
+| Maintenance | ❌ Hard     | ⚠️ Medium     | ✅ Easy        |
+| Performance | ❌ Poor     | ⚠️ Medium     | ✅ Best        |
+
+---
+
+# 💡 Interview Tip (Very Important)
+
+If interviewer asks:
+
+👉 **“Which one should we use?”**
+
+✔️ Answer:
+
+* Use **External CSS** for real projects
+* Use **Internal CSS** for small pages
+* Use **Inline CSS** only for quick fixes
